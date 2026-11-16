@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Porta | Digital Portfolios — Jasa Website Portofolio Personal</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- AOS Animation CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- Custom Tailwind Configuration -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        porta: {
+                            dark: '#0D261D',
+                            forest: '#14382B',
+                            emerald: '#1D4D3C',
+                            gold: '#D4B475',
+                            goldLight: '#E8CFA0',
+                            goldDark: '#B39252',
+                            cream: '#F9F7F2'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['"Playfair Display"', 'serif'],
+                    },
+                    animation: {
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-slow': 'pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-12px)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0D261D;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #D4B475;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #B39252;
+        }
+
+        /* Subtle Geometric Grid Background */
+        .bg-grid-pattern {
+            background-image: linear-gradient(to right, rgba(212, 180, 117, 0.06) 1px, transparent 1px),
+                              linear-gradient(to bottom, rgba(212, 180, 117, 0.06) 1px, transparent 1px);
+            background-size: 48px 48px;
+        }
+    </style>
+</head>
+<body class="bg-porta-dark text-white font-sans antialiased selection:bg-porta-gold selection:text-porta-dark overflow-x-hidden">
+
+    <!-- ==================== NAVBAR ==================== -->
+    <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4 px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-porta-forest border border-porta-gold/40 flex items-center justify-center group-hover:border-porta-gold transition-colors shadow-lg">
+                    <!-- Custom Porta Arch SVG Logo -->
+                    <svg class="w-6 h-6" viewBox="0 0 100 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <!-- Aksen Lengkung Emas di Dalam -->
+                        <path d="M44 100V42C44 26 55 15 68 15C73 15 77 17 80 20" stroke="#D4B475" stroke-width="5.5" stroke-linecap="round"/>
+                        
+                        <!-- Lengkungan Kanan Atas ke Batang Tengah -->
+                        <path d="M48 16C53 12 60 10 66 10C79 10 88 22 88 38V100C76 100 65 92 60 80" stroke="#E8CFA0" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        
+                        <!-- Garis Utama Gapura Luar & Lengkungan Menyilang (P) -->
+                        <path d="M16 100V44C16 23 32 10 50 10C65 10 75 21 75 36C75 56 54 64 36 72C24 77 18 86 16 100Z" stroke="#FFFFFF" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        
+                        <!-- Pilar Lurus Tengah -->
+                        <path d="M38 100V42C38 34 42 27 48 23" stroke="#FFFFFF" stroke-width="5.5" stroke-linecap="round"/>
+                        
+                        <!-- Lengkungan Bawah Kanan Menyambung ke Pilar Kanan -->
+                        <path d="M52 67C72 60 88 49 88 34" stroke="#FFFFFF" stroke-width="5.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="font-bold text-xl tracking-tight text-white block leading-none">Porta</span>
+                    <span class="text-[9px] tracking-[0.22em] text-porta-gold uppercase font-semibold block mt-0.5">Digital Portfolios</span>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-300">
+                <a href="#keunggulan" class="hover:text-porta-gold transition-colors">Keunggulan</a>
+                <a href="#showcase" class="hover:text-porta-gold transition-colors">Showcase Proyek</a>
+                <a href="#paket" class="hover:text-porta-gold transition-colors">Daftar Paket</a>
+                <a href="#order" class="hover:text-porta-gold transition-colors">Konsultasi</a>
+            </nav>
+
+            <!-- CTA Button -->
+            <div class="flex items-center gap-3">
+                <a href="#order" class="bg-porta-gold hover:bg-porta-goldLight text-porta-dark font-semibold text-sm px-5 py-2.5 rounded-full transition-all duration-300 shadow-md hover:shadow-porta-gold/25 flex items-center gap-2">
+                    <span>Pesan Sekarang</span>
+                    <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="relative min-h-screen flex items-center pt-28 pb-20 px-6 lg:px-12 bg-grid-pattern overflow-hidden">
+        <!-- Ambient Glow Effects -->
+        <div class="absolute top-20 -left-24 w-96 h-96 bg-porta-emerald/30 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute bottom-10 -right-24 w-96 h-96 bg-porta-gold/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+            <!-- Left Content -->
+            <div class="lg:col-span-7 space-y-6" data-aos="fade-right" data-aos-duration="800">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-porta-forest/80 border border-porta-gold/30 text-porta-gold text-xs font-medium">
+                    <span class="w-2 h-2 rounded-full bg-porta-gold animate-ping"></span>
+                    <span>Done-For-You Portfolio Service • Mulai Rp100rb</span>
+                </div>
+
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight tracking-tight">
+                    Masih Pakai CV PDF Kaku? <br>
+                    <span class="font-serif italic text-porta-gold font-normal">Bikin Rekruter Auto-Notice</span> Lewat Website Portofolio!
+                </h1>
+
+                <p class="text-gray-300 text-base sm:text-lg max-w-2xl leading-relaxed">
+                    Porta membantu mahasiswa tingkat akhir, <em>fresh graduate</em>, dan <em>freelancer</em> membangun panggung karya digital yang modern, responsif, dan siap terima beres tanpa perlu pusing memikirkan urusan teknis <em>coding</em>.
+                </p>
+
+                <div class="flex flex-wrap items-center gap-4 pt-2">
+                    <a href="#order" class="bg-porta-gold hover:bg-porta-goldLight text-porta-dark font-bold px-7 py-3.5 rounded-xl transition-all duration-300 shadow-lg hover:shadow-porta-gold/30 flex items-center gap-2">
+                        <span>Buat Portofoliomu</span>
+                        <i data-lucide="sparkles" class="w-4 h-4"></i>
+                    </a>
+                    <a href="#showcase" class="bg-porta-forest/60 hover:bg-porta-forest border border-porta-gold/30 text-white font-semibold px-7 py-3.5 rounded-xl transition-all duration-300 flex items-center gap-2">
+                        <span>Lihat Hasil Karya</span>
+                        <i data-lucide="layout-grid" class="w-4 h-4 text-porta-gold"></i>
+                    </a>
+                </div>
+
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-3 gap-6 pt-6 border-t border-porta-gold/15 max-w-lg">
+                    <div>
+                        <p class="text-2xl font-bold text-porta-gold">2x Lipat</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Peluang dilirik rekruter</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl font-bold text-white">100%</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Terima beres anti-ribet</p>
+                    </div>
+                    <div>
+                        <p class="text-2xl font-bold text-porta-gold">2-4 Hari</p>
+                        <p class="text-xs text-gray-400 mt-0.5">Estimasi pengerjaan kilat</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Visual Mockup Card -->
+            <div class="lg:col-span-5 relative" data-aos="fade-left" data-aos-duration="900">
+                <div class="relative animate-float">
+                    <!-- Main Browser Mockup -->
+                    <div class="rounded-2xl bg-porta-forest border border-porta-gold/30 p-3 shadow-2xl">
+                        <!-- Browser Top Bar -->
+                        <div class="flex items-center justify-between px-3 py-2 border-b border-white/10 mb-3">
+                            <div class="flex items-center gap-1.5">
+                                <span class="w-2.5 h-2.5 rounded-full bg-red-400/80"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400/80"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-green-400/80"></span>
+                            </div>
+                            <div class="bg-porta-dark/80 px-3 py-1 rounded-md text-[11px] text-porta-gold/90 font-mono">
+                                https://namakamu.portadigital.id
+                            </div>
+                            <i data-lucide="lock" class="w-3.5 h-3.5 text-porta-gold"></i>
+                        </div>
+                        <!-- Preview Image -->
+                        <div class="relative rounded-xl overflow-hidden aspect-[4/3] group">
+                            <img src="https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?auto=format&fit=crop&w=900&q=80" alt="Preview Portfolio Website" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700">
+                            <div class="absolute inset-0 bg-gradient-to-t from-porta-dark/90 via-porta-dark/20 to-transparent flex flex-col justify-end p-5">
+                                <span class="text-xs font-semibold text-porta-gold uppercase tracking-wider">Featured Showcase</span>
+                                <h3 class="text-lg font-bold text-white">Interactive Personal Brand & Case Study</h3>
+                                <p class="text-xs text-gray-300 mt-1">Responsif di Desktop & Mobile • Terintegrasi Kontak Langsung</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Floating Badge Card -->
+                    <div class="absolute -bottom-6 -left-6 bg-porta-cream text-porta-dark p-4 rounded-2xl shadow-xl border border-porta-gold max-w-[210px] hidden sm:block">
+                        <div class="flex items-center gap-2.5">
+                            <div class="w-8 h-8 rounded-lg bg-porta-dark text-porta-gold flex items-center justify-center shrink-0">
+                                <i data-lucide="check-circle-2" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold leading-tight">Tanpa Perlu Coding</p>
+                                <p class="text-[11px] text-gray-600 mt-0.5">Kirim materi CV, tim Porta yang bangun!</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== KEUNGGULAN SECTION ==================== -->
+    <section id="keunggulan" class="py-20 px-6 lg:px-12 bg-porta-forest/40 border-y border-porta-gold/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-14" data-aos="fade-up">
+                <span class="text-porta-gold text-xs font-bold uppercase tracking-[0.2em]">Kenapa Memilih Porta?</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">Solusi Personal Branding Tanpa Hambatan Teknis</h2>
+                <p class="text-gray-300 text-sm sm:text-base mt-3">Dirancang khusus untuk menjawab kendala mahasiswa dan pencari kerja pemula dengan standar desain profesional.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="bg-porta-dark/90 border border-porta-gold/20 hover:border-porta-gold/60 p-7 rounded-2xl transition-all duration-300 hover:-translate-y-1.5" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-12 h-12 rounded-xl bg-porta-forest text-porta-gold flex items-center justify-center mb-5 border border-porta-gold/30">
+                        <i data-lucide="wand-2" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Kustomisasi Sesuai Karakter</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Bukan templat kaku yang pasaran. Tampilan warna, struktur bagian karya, hingga gaya bahasa disesuaikan dengan bidang keahlian dan karakter profesionalmu.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="bg-porta-dark/90 border border-porta-gold/20 hover:border-porta-gold/60 p-7 rounded-2xl transition-all duration-300 hover:-translate-y-1.5" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-12 h-12 rounded-xl bg-porta-forest text-porta-gold flex items-center justify-center mb-5 border border-porta-gold/30">
+                        <i data-lucide="wallet" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Harga Ramah Kantong Mahasiswa</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Mulai dari Rp100.000 saja, kamu sudah bisa memiliki portofolio berbasis web yang jauh lebih berkelas dibanding melampirkan tumpukan dokumen PDF biasa.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="bg-porta-dark/90 border border-porta-gold/20 hover:border-porta-gold/60 p-7 rounded-2xl transition-all duration-300 hover:-translate-y-1.5" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-12 h-12 rounded-xl bg-porta-forest text-porta-gold flex items-center justify-center mb-5 border border-porta-gold/30">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Layanan Terima Beres</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed">
+                        Mulai dari penataan materi, pengaturan domain, hingga <em>deployment hosting</em> ditangani penuh oleh tim ahli Porta dengan pendampingan personal yang ramah.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SHOWCASE PROYEK SECTION ==================== -->
+    <section id="showcase" class="py-24 px-6 lg:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6" data-aos="fade-up">
+                <div>
+                    <span class="text-porta-gold text-xs font-bold uppercase tracking-[0.2em]">Portofolio Karya</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold mt-2">Contoh Proyek yang Pernah Dikerjakan</h2>
+                    <p class="text-gray-400 text-sm sm:text-base mt-2 max-w-xl">
+                        Eksplorasi berbagai gaya desain portofolio kustom yang telah kami bangun untuk talenta di bidang teknologi, desain kreatif, hingga bisnis.
+                    </p>
+                </div>
+
+                <!-- Filter Buttons -->
+                <div class="flex flex-wrap gap-2" id="filter-buttons">
+                    <button onclick="filterProjects('all')" class="filter-btn active px-4 py-2 rounded-full text-xs font-semibold bg-porta-gold text-porta-dark transition-all">Semua</button>
+                    <button onclick="filterProjects('dev')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-porta-forest text-gray-300 hover:text-white border border-porta-gold/20 transition-all">Web & IT</button>
+                    <button onclick="filterProjects('design')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-porta-forest text-gray-300 hover:text-white border border-porta-gold/20 transition-all">UI/UX & Kreatif</button>
+                    <button onclick="filterProjects('grad')" class="filter-btn px-4 py-2 rounded-full text-xs font-semibold bg-porta-forest text-gray-300 hover:text-white border border-porta-gold/20 transition-all">Fresh Graduate</button>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                
+                <!-- Project 1: Full-Stack Developer -->
+                <div class="project-card group bg-porta-forest/50 border border-porta-gold/20 rounded-2xl overflow-hidden hover:border-porta-gold transition-all duration-300 flex flex-col" data-category="dev" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="DevFolio Dark Mode" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-porta-dark/90 backdrop-blur-sm text-porta-gold text-[11px] font-semibold px-3 py-1 rounded-full border border-porta-gold/30">
+                            Web & IT
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-porta-gold transition-colors">Arka Pratama — Software Engineer</h3>
+                            <p class="text-gray-400 text-xs mt-2 leading-relaxed">
+                                Portofolio bergaya <em>modern dark terminal</em> dengan integrasi repositori GitHub otomatis, showcase arsitektur sistem, dan blog catatan teknis.
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                            <span class="text-porta-gold font-medium">Stack: React & Tailwind</span>
+                            <a href="#order" onclick="selectPackage('Paket Pro (Rp 200.000)')" class="text-white hover:text-porta-gold font-semibold flex items-center gap-1">
+                                Pesan Model Ini <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: UI/UX Designer -->
+                <div class="project-card group bg-porta-forest/50 border border-porta-gold/20 rounded-2xl overflow-hidden hover:border-porta-gold transition-all duration-300 flex flex-col" data-category="design" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80" alt="UI UX Studio Portfolio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-porta-dark/90 backdrop-blur-sm text-porta-gold text-[11px] font-semibold px-3 py-1 rounded-full border border-porta-gold/30">
+                            UI/UX & Kreatif
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-porta-gold transition-colors">Nadia Larasati — Product Designer</h3>
+                            <p class="text-gray-400 text-xs mt-2 leading-relaxed">
+                                Tampilan galeri studi kasus interaktif berkonsep editorial minimalis, dilengkapi embed prototipe Figma dan alur riset desain UX.
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                            <span class="text-porta-gold font-medium">Gaya: Editorial Clean</span>
+                            <a href="#order" onclick="selectPackage('Paket Standard (Rp 125.000)')" class="text-white hover:text-porta-gold font-semibold flex items-center gap-1">
+                                Pesan Model Ini <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 3: Fresh Graduate / Digital Marketing -->
+                <div class="project-card group bg-porta-forest/50 border border-porta-gold/20 rounded-2xl overflow-hidden hover:border-porta-gold transition-all duration-300 flex flex-col" data-category="grad" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80" alt="Fresh Graduate Portfolio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-porta-dark/90 backdrop-blur-sm text-porta-gold text-[11px] font-semibold px-3 py-1 rounded-full border border-porta-gold/30">
+                            Fresh Graduate
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-porta-gold transition-colors">Dimas Saputra — Digital Marketer</h3>
+                            <p class="text-gray-400 text-xs mt-2 leading-relaxed">
+                                Website CV interaktif khusus lulusan baru yang menonjolkan pencapaian kampanye magang, sertifikasi kompetensi, dan tombol unduh CV PDF.
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                            <span class="text-porta-gold font-medium">Gaya: Corporate Modern</span>
+                            <a href="#order" onclick="selectPackage('Paket Standard (Rp 125.000)')" class="text-white hover:text-porta-gold font-semibold flex items-center gap-1">
+                                Pesan Model Ini <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 4: Creative Content & Photography -->
+                <div class="project-card group bg-porta-forest/50 border border-porta-gold/20 rounded-2xl overflow-hidden hover:border-porta-gold transition-all duration-300 flex flex-col" data-category="design" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <img src="https://images.unsplash.com/photo-1542744094-3a31f272c490?auto=format&fit=crop&w=800&q=80" alt="Creative Visual Portfolio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-porta-dark/90 backdrop-blur-sm text-porta-gold text-[11px] font-semibold px-3 py-1 rounded-full border border-porta-gold/30">
+                            UI/UX & Kreatif
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-porta-gold transition-colors">Bryan Dzaky — Brand & Visual Artist</h3>
+                            <p class="text-gray-400 text-xs mt-2 leading-relaxed">
+                                Tata letak <em>masonry grid</em> berkecepatan tinggi untuk memamerkan karya ilustrasi, identitas merek, dan katalog layanan komisi freelance.
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                            <span class="text-porta-gold font-medium">Gaya: Visual Grid</span>
+                            <a href="#order" onclick="selectPackage('Paket Basic (Rp 100.000)')" class="text-white hover:text-porta-gold font-semibold flex items-center gap-1">
+                                Pesan Model Ini <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 5: Data Analyst / Sistem Informasi -->
+                <div class="project-card group bg-porta-forest/50 border border-porta-gold/20 rounded-2xl overflow-hidden hover:border-porta-gold transition-all duration-300 flex flex-col" data-category="dev" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Data Analyst Portfolio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-porta-dark/90 backdrop-blur-sm text-porta-gold text-[11px] font-semibold px-3 py-1 rounded-full border border-porta-gold/30">
+                            Web & IT
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-porta-gold transition-colors">Rizky Fauzan — Data & System Analyst</h3>
+                            <p class="text-gray-400 text-xs mt-2 leading-relaxed">
+                                Website portofolio analitik dengan tampilan visualisasi dashboard proyek, ringkasan studi kasus bisnis, dan dokumentasi proyek akhir kuliah.
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                            <span class="text-porta-gold font-medium">Gaya: Clean Analytical</span>
+                            <a href="#order" onclick="selectPackage('Paket Pro (Rp 200.000)')" class="text-white hover:text-porta-gold font-semibold flex items-center gap-1">
+                                Pesan Model Ini <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 6: Mahasiswa Tingkat Akhir / Akademik -->
+                <div class="project-card group bg-porta-forest/50 border border-porta-gold/20 rounded-2xl overflow-hidden hover:border-porta-gold transition-all duration-300 flex flex-col" data-category="grad" data-aos="fade-up" data-aos-delay="300">
+                    <div class="relative overflow-hidden aspect-[16/10]">
+                        <img src="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?auto=format&fit=crop&w=800&q=80" alt="Academic & Organization Portfolio" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-3 left-3 bg-porta-dark/90 backdrop-blur-sm text-porta-gold text-[11px] font-semibold px-3 py-1 rounded-full border border-porta-gold/30">
+                            Fresh Graduate
+                        </div>
+                    </div>
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <h3 class="text-lg font-bold text-white group-hover:text-porta-gold transition-colors">Daffa Adzriel — Manajemen & Komunikasi</h3>
+                            <p class="text-gray-400 text-xs mt-2 leading-relaxed">
+                                Portofolio elegan untuk mahasiswa tingkat akhir yang merangkum rekam jejak organisasi kampus, publikasi tulisan, dan pencapaian lomba.
+                            </p>
+                        </div>
+                        <div class="pt-4 mt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                            <span class="text-porta-gold font-medium">Gaya: Minimalist Warm</span>
+                            <a href="#order" onclick="selectPackage('Paket Basic (Rp 100.000)')" class="text-white hover:text-porta-gold font-semibold flex items-center gap-1">
+                                Pesan Model Ini <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PRICING SECTION ==================== -->
+    <section id="paket" class="py-24 px-6 lg:px-12 bg-porta-forest/40 border-y border-porta-gold/10">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center max-w-2xl mx-auto mb-16" data-aos="fade-up">
+                <span class="text-porta-gold text-xs font-bold uppercase tracking-[0.2em]">Investasi Karier</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2">Daftar Harga Paket Layanan</h2>
+                <p class="text-gray-300 text-sm sm:text-base mt-3">Pilih paket yang paling sesuai dengan kebutuhan dan tahap kariermu saat ini. Transparan tanpa biaya tersembunyi.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+                
+                <!-- Paket Basic -->
+                <div class="bg-porta-dark border border-porta-gold/25 rounded-3xl p-8 flex flex-col justify-between hover:border-porta-gold/60 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-porta-gold">Paket Basic</span>
+                        <div class="mt-4 flex items-baseline gap-1">
+                            <span class="text-sm text-gray-400">Rp</span>
+                            <span class="text-4xl font-bold text-white">100.000</span>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2">Cocok untuk kamu yang sudah memiliki akun hosting atau ingin file source code siap pakai.</p>
+
+                        <ul class="mt-8 space-y-3.5 text-sm text-gray-300">
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-4 h-4 text-porta-gold shrink-0 mt-0.5"></i>
+                                <span>Desain Website Portofolio Kustom & Responsif</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-4 h-4 text-porta-gold shrink-0 mt-0.5"></i>
+                                <span>Penataan Profil, Skill, & Galeri Karya</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-4 h-4 text-porta-gold shrink-0 mt-0.5"></i>
+                                <span>Integrasi Tombol Kontak WhatsApp & Sosmed</span>
+                            </li>
+                            <li class="flex items-start gap-3 text-gray-500">
+                                <i data-lucide="x" class="w-4 h-4 shrink-0 mt-0.5"></i>
+                                <span>Belum termasuk layanan hosting & domain</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#order" onclick="selectPackage('Paket Basic (Rp 100.000)')" class="mt-8 w-full py-3.5 px-5 rounded-xl border border-porta-gold text-porta-gold hover:bg-porta-gold hover:text-porta-dark font-semibold text-sm text-center transition-all duration-300 block">
+                        Pilih Paket Basic
+                    </a>
+                </div>
+
+                <!-- Paket Standard (Best Value) -->
+                <div class="bg-gradient-to-b from-porta-emerald/70 to-porta-dark border-2 border-porta-gold rounded-3xl p-8 flex flex-col justify-between relative shadow-2xl shadow-porta-gold/10 lg:-translate-y-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute -top-3.5 right-6 bg-porta-gold text-porta-dark text-[11px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-full shadow">
+                        Paling Diminati
+                    </div>
+
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-porta-gold">Paket Standard</span>
+                        <div class="mt-4 flex items-baseline gap-1">
+                            <span class="text-sm text-gray-300">Rp</span>
+                            <span class="text-4xl font-bold text-white">125.000</span>
+                        </div>
+                        <p class="text-xs text-gray-300 mt-2">Solusi praktis terima beres untuk mahasiswa tingkat akhir dan <em>fresh graduate</em>.</p>
+
+                        <ul class="mt-8 space-y-3.5 text-sm text-gray-200">
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-4 h-4 text-porta-gold shrink-0 mt-0.5"></i>
+                                <span>Semua fitur pada <strong>Paket Basic</strong></span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-4 h-4 text-porta-gold shrink-0 mt-0.5"></i>
+                                <span><strong>Sudah termasuk Hosting aktif</strong> (siap akses online)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-4 h-4 text-porta-gold shrink-0 mt-0.5"></i>
+                                <span>Bantuan penataan materi CV & portofolio awal</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-4 h-4 text-porta-gold shrink-0 mt-0.5"></i>
+                                <span>Revisi desain ringan hingga sesuai harapan</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#order" onclick="selectPackage('Paket Standard (Rp 125.000)')" class="mt-8 w-full py-3.5 px-5 rounded-xl bg-porta-gold hover:bg-porta-goldLight text-porta-dark font-bold text-sm text-center transition-all duration-300 shadow-lg block">
+                        Pilih Paket Standard
+                    </a>
+                </div>
+
+                <!-- Paket Pro -->
+                <div class="bg-porta-dark border border-porta-gold/25 rounded-3xl p-8 flex flex-col justify-between hover:border-porta-gold/60 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                    <div>
+                        <span class="text-xs font-bold uppercase tracking-wider text-porta-gold">Paket Pro</span>
+                        <div class="mt-4 flex items-baseline gap-1">
+                            <span class="text-sm text-gray-400">Rp</span>
+                            <span class="text-4xl font-bold text-white">200.000</span>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2">Paket lengkap dengan domain kustom profesional untuk <em>freelancer</em> dan pekerja kreatif.</p>
+
+                        <ul class="mt-8 space-y-3.5 text-sm text-gray-300">
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-4 h-4 text-porta-gold shrink-0 mt-0.5"></i>
+                                <span>Semua fitur pada <strong>Paket Standard</strong></span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-4 h-4 text-porta-gold shrink-0 mt-0.5"></i>
+                                <span><strong>Hosting + Custom Domain (.com / .id / dll)</strong></span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-4 h-4 text-porta-gold shrink-0 mt-0.5"></i>
+                                <span><strong>Free Maintenance 3x</strong> (update proyek/isi web)</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <i data-lucide="check" class="w-4 h-4 text-porta-gold shrink-0 mt-0.5"></i>
+                                <span>Optimasi SEO dasar agar mudah dicari rekruter</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <a href="#order" onclick="selectPackage('Paket Pro (Rp 200.000)')" class="mt-8 w-full py-3.5 px-5 rounded-xl border border-porta-gold text-porta-gold hover:bg-porta-gold hover:text-porta-dark font-semibold text-sm text-center transition-all duration-300 block">
+                        Pilih Paket Pro
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FORM PEMESANAN (REDIRECT WA) ==================== -->
+    <section id="order" class="py-24 px-6 lg:px-12 relative">
+        <div class="max-w-4xl mx-auto">
+            <div class="bg-porta-forest/70 backdrop-blur-md border border-porta-gold/30 rounded-3xl p-8 sm:p-12 shadow-2xl" data-aos="zoom-in" data-aos-duration="700">
+                <div class="text-center max-w-xl mx-auto mb-10">
+                    <span class="text-porta-gold text-xs font-bold uppercase tracking-[0.2em]">Mulai Langkahmu</span>
+                    <h2 class="text-3xl font-bold mt-2">Formulir Pemesanan & Konsultasi</h2>
+                    <p class="text-gray-300 text-sm mt-2">
+                        Isi data singkat di bawah ini, lalu kamu akan langsung terhubung ke WhatsApp tim Porta untuk konsultasi desain gratis.
+                    </p>
+                </div>
+
+                <form id="waOrderForm" class="space-y-6">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Nama Lengkap -->
+                        <div>
+                            <label for="nama" class="block text-xs font-semibold uppercase tracking-wider text-porta-gold mb-2">Nama Lengkap *</label>
+                            <input type="text" id="nama" required placeholder="Contoh: Muhammad Delvin"
+                                class="w-full px-4 py-3 rounded-xl bg-porta-dark/90 border border-porta-gold/30 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-porta-gold transition-colors">
+                        </div>
+
+                        <!-- Status / Profesi -->
+                        <div>
+                            <label for="profesi" class="block text-xs font-semibold uppercase tracking-wider text-porta-gold mb-2">Status / Bidang Keahlian *</label>
+                            <input type="text" id="profesi" required placeholder="Contoh: Mahasiswa IT / UI Designer"
+                                class="w-full px-4 py-3 rounded-xl bg-porta-dark/90 border border-porta-gold/30 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-porta-gold transition-colors">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <!-- Pilihan Paket -->
+                        <div>
+                            <label for="paketSelect" class="block text-xs font-semibold uppercase tracking-wider text-porta-gold mb-2">Pilih Paket Layanan *</label>
+                            <select id="paketSelect" required
+                                class="w-full px-4 py-3 rounded-xl bg-porta-dark/90 border border-porta-gold/30 text-white text-sm focus:outline-none focus:border-porta-gold transition-colors">
+                                <option value="Paket Basic (Rp 100.000)">Paket Basic — Rp 100.000</option>
+                                <option value="Paket Standard (Rp 125.000)" selected>Paket Standard — Rp 125.000 </option>
+                                <option value="Paket Pro (Rp 200.000)">Paket Pro — Rp 200.000 </option>
+                            </select>
+                        </div>
+
+                        <!-- Nama Domain Impian (Opsional) -->
+                        <div>
+                            <label for="domain" class="block text-xs font-semibold uppercase tracking-wider text-porta-gold mb-2">Request Nama Domain (Opsional)</label>
+                            <input type="text" id="domain" placeholder="Contoh: delvinporto.com"
+                                class="w-full px-4 py-3 rounded-xl bg-porta-dark/90 border border-porta-gold/30 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-porta-gold transition-colors">
+                        </div>
+                    </div>
+
+                    <!-- Catatan / Kebutuhan Khusus -->
+                    <div>
+                        <label for="catatan" class="block text-xs font-semibold uppercase tracking-wider text-porta-gold mb-2">Catatan atau Gaya Desain yang Diinginkan</label>
+                        <textarea id="catatan" rows="3" placeholder="Ceritakan sedikit kebutuhan portofoliomu (misal: tema warna gelap/terang, ingin menampilkan proyek kuliah, atau link referensi)..."
+                            class="w-full px-4 py-3 rounded-xl bg-porta-dark/90 border border-porta-gold/30 text-white placeholder-gray-500 text-sm focus:outline-none focus:border-porta-gold transition-colors"></textarea>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="w-full py-4 px-6 rounded-xl bg-porta-gold hover:bg-porta-goldLight text-porta-dark font-bold text-base transition-all duration-300 shadow-lg hover:shadow-porta-gold/30 flex items-center justify-center gap-2.5 cursor-pointer">
+                        <i data-lucide="message-circle" class="w-5 h-5"></i>
+                        <span>Kirim Pesanan via WhatsApp</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-porta-dark border-t border-porta-gold/15 py-12 px-6 lg:px-12 text-sm text-gray-400">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-lg bg-porta-forest border border-porta-gold/30 flex items-center justify-center">
+                    <svg class="w-5 h-5 text-porta-gold" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10 30V14C10 9.58172 13.5817 6 18 6C22.4183 6 26 9.58172 26 14V30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                        <path d="M15 30V15C15 13.3431 16.3431 12 18 12C19.6569 12 21 13.3431 21 15C21 16.6569 19.6569 18 18 18H15" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="font-bold text-white block leading-none">Porta Digital Portfolios</span>
+                    <span class="text-xs text-gray-500">Depok, Jawa Barat • Indonesia</span>
+                </div>
+            </div>
+
+            <p class="text-xs text-gray-500 text-center md:text-right">
+                &copy; 2026 Porta Digital Portfolios. Membantu talenta muda tampil menonjol di era digital.
+            </p>
+        </div>
+    </footer>
+
+    <!-- ==================== SCRIPTS ==================== -->
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Initialize AOS Scroll Animations
+        AOS.init({
+            once: false,
+            mirror: true,
+            offset: 60,
+            duration: 700,
+            easing: 'ease-out-cubic'
+        });
+
+        // Navbar Glassmorphism on Scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 40) {
+                navbar.classList.add('bg-porta-dark/90', 'backdrop-blur-md', 'border-b', 'border-porta-gold/15', 'py-3', 'shadow-lg');
+                navbar.classList.remove('py-4');
+            } else {
+                navbar.classList.remove('bg-porta-dark/90', 'backdrop-blur-md', 'border-b', 'border-porta-gold/15', 'py-3', 'shadow-lg');
+                navbar.classList.add('py-4');
+            }
+        });
+
+        // Portfolio Category Filter
+        function filterProjects(category) {
+            const cards = document.querySelectorAll('.project-card');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            buttons.forEach(btn => {
+                btn.classList.remove('bg-porta-gold', 'text-porta-dark');
+                btn.classList.add('bg-porta-forest', 'text-gray-300');
+            });
+
+            event.target.classList.remove('bg-porta-forest', 'text-gray-300');
+            event.target.classList.add('bg-porta-gold', 'text-porta-dark');
+
+            cards.forEach(card => {
+                if (category === 'all' || card.getAttribute('data-category') === category) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        }
+
+        // Auto-Select Package from Cards
+        function selectPackage(packageName) {
+            const selectElement = document.getElementById('paketSelect');
+            selectElement.value = packageName;
+        }
+
+        // Handle Form Submission & Redirect to WhatsApp
+        document.getElementById('waOrderForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            // Ganti dengan nomor WhatsApp admin Porta (format 628xxx)
+            const nomorWhatsApp = "6285715106164";
+
+            const nama = document.getElementById('nama').value.trim();
+            const profesi = document.getElementById('profesi').value.trim();
+            const paket = document.getElementById('paketSelect').value;
+            const domain = document.getElementById('domain').value.trim() || "-";
+            const catatan = document.getElementById('catatan').value.trim() || "Ingin konsultasi desain terlebih dahulu.";
+
+            const pesan = `Halo tim *Porta Digital Portfolios*! 👋%0A%0ASaya tertarik untuk membuat website portofolio personal. Berikut detail pemesanan saya:%0A%0A` +
+                          `• *Nama:* ${encodeURIComponent(nama)}%0A` +
+                          `• *Status/Bidang:* ${encodeURIComponent(profesi)}%0A` +
+                          `• *Pilihan Paket:* ${encodeURIComponent(paket)}%0A` +
+                          `• *Request Domain:* ${encodeURIComponent(domain)}%0A` +
+                          `• *Catatan:* ${encodeURIComponent(catatan)}%0A%0A` +
+                          `Mohon info langkah selanjutnya ya. Terima kasih!`;
+
+            const urlWA = `https://wa.me/${nomorWhatsApp}?text=${pesan}`;
+            window.open(urlWA, '_blank');
+        });
+    </script>
+</body>
+</html>
