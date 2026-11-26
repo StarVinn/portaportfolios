@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daffa Azriel — Manajemen &amp; Komunikasi</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap"
+        rel="stylesheet">
+    <style>
+        /* ═══════════════════════════════════════
+           RESET & ROOT (MIDNIGHT VIOLET THEME)
+        ═══════════════════════════════════════ */
+        *,
+        *::before,
+        *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-main: #151126;
+            --bg-deep: #0f0c1d;
+            --violet-start: #9375e8;
+            --violet-end: #5d47b8;
+            --cyan-glow: rgba(56, 189, 248, 0.22);
+            --purple-glow: rgba(139, 92, 246, 0.25);
+            --text-white: #ffffff;
+            --text-soft: #e2e0f0;
+            --text-muted: #b6b1d4;
+            --font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background-color: var(--bg-main);
+            background-image:
+                radial-gradient(circle at 88% 8%, var(--cyan-glow) 0%, transparent 42%),
+                radial-gradient(circle at 12% 35%, var(--purple-glow) 0%, transparent 45%),
+                radial-gradient(circle at 85% 88%, rgba(124, 58, 237, 0.2) 0%, transparent 45%);
+            color: var(--text-white);
+            line-height: 1.65;
+            overflow-x: hidden;
+            position: relative;
+            min-height: 100vh;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* ═══════════════════════════════════════
+           DECORATIVE BACKGROUND WAVES
+        ═══════════════════════════════════════ */
+        .bg-wave-top,
+        .bg-wave-bottom {
+            position: fixed;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.28;
+        }
+
+        .bg-wave-top {
+            top: -40px;
+            right: -60px;
+            width: 480px;
+            height: 480px;
+        }
+
+        .bg-wave-bottom {
+            bottom: -60px;
+            right: -40px;
+            width: 520px;
+            height: 520px;
+        }
+
+        /* ═══════════════════════════════════════
+           MAIN CONTAINER & HEADER RIBBON
+        ═══════════════════════════════════════ */
+        .page-wrapper {
+            position: relative;
+            z-index: 1;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 64px 0 80px;
+        }
+
+        /* Top Section: About Me + Contact + Capsule Portrait */
+        .top-section {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 48px;
+            align-items: center;
+            padding-right: 64px;
+            margin-bottom: 64px;
+        }
+
+        /* Left-bleeding gradient pill header ("About me") */
+        .about-ribbon {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(90deg, rgba(147, 117, 232, 0.22) 0%, var(--violet-start) 100%);
+            padding: 16px 52px 16px 64px;
+            border-radius: 0 999px 999px 0;
+            margin-bottom: 36px;
+            box-shadow: 0 12px 32px rgba(93, 71, 184, 0.3);
+        }
+
+        .about-ribbon h1 {
+            font-size: clamp(28px, 3.6vw, 40px);
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            color: #ffffff;
+        }
+
+        .bio-content {
+            padding-left: 64px;
+        }
+
+        .bio-greeting {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-white);
+            margin-bottom: 6px;
+        }
+
+        .bio-text {
+            font-size: 15px;
+            color: var(--text-soft);
+            margin-bottom: 22px;
+            max-width: 520px;
+            line-height: 1.75;
+        }
+
+        .bio-text strong {
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        /* Contact Sub-section inside Top Left */
+        .contact-heading {
+            font-size: 22px;
+            font-weight: 800;
+            font-style: italic;
+            margin-top: 34px;
+            margin-bottom: 18px;
+            color: #ffffff;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(210px, 1fr));
+            gap: 14px 24px;
+            max-width: 540px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 13.5px;
+            font-weight: 500;
+            color: var(--text-soft);
+            transition: transform 0.2s ease, color 0.2s ease;
+        }
+
+        .contact-item:hover {
+            color: #ffffff;
+            transform: translateX(3px);
+        }
+
+        .contact-badge {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
+            background: #ffffff;
+            color: var(--bg-main);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 800;
+            flex-shrink: 0;
+        }
+
+        /* ═══════════════════════════════════════
+           CAPSULE PORTRAIT WITH ORBIT RING
+        ═══════════════════════════════════════ */
+        .portrait-area {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .portrait-orbit {
+            position: relative;
+            width: 310px;
+            height: 410px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Thin tilted oval outline around portrait */
+        .portrait-orbit::before {
+            content: '';
+            position: absolute;
+            inset: -14px;
+            border-radius: 170px;
+            border: 1.5px solid rgba(167, 139, 250, 0.45);
+            transform: rotate(-10deg);
+            pointer-events: none;
+        }
+
+        .portrait-capsule {
+            width: 290px;
+            height: 390px;
+            border-radius: 150px;
+            overflow: hidden;
+            background: linear-gradient(180deg, #7ef2f2 0%, #38bdf8 100%);
+            box-shadow:
+                0 24px 55px rgba(15, 12, 29, 0.7),
+                0 0 40px rgba(56, 189, 248, 0.22);
+            position: relative;
+            z-index: 1;
+        }
+
+        .portrait-capsule img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center top;
+        }
+
+        /* ═══════════════════════════════════════
+           BOTTOM VIOLET CARD PANEL (LEFT-BLEEDING)
+        ═══════════════════════════════════════ */
+        .violet-panel-wrap {
+            padding-right: 64px;
+            margin-bottom: 56px;
+        }
+
+        .violet-panel {
+            background: linear-gradient(115deg, rgba(133, 102, 224, 0.58) 0%, #7c5ce0 48%, #6344c6 100%);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-radius: 0 96px 96px 0;
+            padding: 54px 64px 54px 64px;
+            display: grid;
+            grid-template-columns: 1fr 1.15fr;
+            gap: 56px;
+            box-shadow: 0 25px 60px rgba(10, 7, 24, 0.55);
+            border-top: 1px solid rgba(255, 255, 255, 0.18);
+            border-right: 1px solid rgba(255, 255, 255, 0.15);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .panel-block {
+            margin-bottom: 36px;
+        }
+
+        .panel-block:last-child {
+            margin-bottom: 0;
+        }
+
+        .panel-heading-row {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 14px;
+            flex-wrap: wrap;
+        }
+
+        .panel-title {
+            font-size: 22px;
+            font-weight: 800;
+            font-style: italic;
+            color: #ffffff;
+            letter-spacing: -0.2px;
+        }
+
+        .year-pill {
+            padding: 4px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.65);
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #ffffff;
+        }
+
+        .panel-subtext {
+            font-size: 14.5px;
+            color: rgba(255, 255, 255, 0.92);
+            font-weight: 500;
+        }
+
+        /* Technical Skill App-style Square Badges (Matching Reference) */
+        .tech-badges {
+            display: grid;
+            grid-template-columns: repeat(3, 54px);
+            gap: 14px;
+            margin-top: 14px;
+        }
+
+        .tech-badge {
+            width: 54px;
+            height: 54px;
+            border-radius: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 16px;
+            box-shadow: 0 8px 18px rgba(15, 12, 29, 0.35);
+            transition: transform 0.2s ease;
+            cursor: default;
+        }
+
+        .tech-badge:hover {
+            transform: translateY(-3px);
+        }
+
+        .tech-badge span {
+            font-size: 8.5px;
+            font-weight: 600;
+            opacity: 0.85;
+            margin-top: 1px;
+        }
+
+        .badge-pr {
+            background: #1a103c;
+            color: #a78bfa;
+            border: 1.5px solid #7c3aed;
+        }
+
+        .badge-mc {
+            background: #0d1b2a;
+            color: #38bdf8;
+            border: 1.5px solid #0284c7;
+        }
+
+        .badge-ex {
+            background: #0b291e;
+            color: #34d399;
+            border: 1.5px solid #059669;
+        }
+
+        .badge-no {
+            background: #18181b;
+            color: #f4f4f5;
+            border: 1.5px solid #71717a;
+        }
+
+        .badge-ga {
+            background: #2b1810;
+            color: #fb923c;
+            border: 1.5px solid #ea580c;
+        }
+
+        .badge-cv {
+            background: #111c33;
+            color: #60a5fa;
+            border: 1.5px solid #2563eb;
+        }
+
+        /* 2-Column Split Lists with Vertical Divider (Soft Skill & Skill Set) */
+        .split-skill-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            margin-top: 12px;
+        }
+
+        .skill-col-left {
+            padding-right: 20px;
+            border-right: 1px solid rgba(255, 255, 255, 0.32);
+        }
+
+        .skill-col-right {
+            padding-left: 22px;
+        }
+
+        .skill-list-item {
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.94);
+            margin-bottom: 10px;
+        }
+
+        .skill-list-item:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Inline Pipe-separated Row (Interest & Language) */
+        .inline-pipe-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 14px;
+            font-weight: 500;
+            color: rgba(255, 255, 255, 0.94);
+            margin-top: 12px;
+            flex-wrap: wrap;
+        }
+
+        .pipe-sep {
+            color: rgba(255, 255, 255, 0.45);
+        }
+
+        /* ═══════════════════════════════════════
+           EXPERIENCE & PORTFOLIO SECTION (COMPACT)
+        ═══════════════════════════════════════ */
+        .extra-section {
+            padding: 0 64px;
+        }
+
+        .extra-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .extra-header h2 {
+            font-size: 22px;
+            font-weight: 800;
+            font-style: italic;
+            color: #ffffff;
+        }
+
+        .extra-line {
+            flex: 1;
+            height: 1px;
+            background: rgba(167, 139, 250, 0.25);
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .work-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(167, 139, 250, 0.22);
+            border-radius: 22px;
+            padding: 24px;
+            transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+        }
+
+        .work-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--violet-start);
+            background: rgba(147, 117, 232, 0.09);
+        }
+
+        .work-tag {
+            display: inline-block;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #a78bfa;
+            margin-bottom: 8px;
+        }
+
+        .work-card h3 {
+            font-size: 17px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #ffffff;
+        }
+
+        .work-card p {
+            font-size: 13.5px;
+            color: var(--text-muted);
+            line-height: 1.65;
+        }
+
+        /* ═══════════════════════════════════════
+           RESPONSIVE
+        ═══════════════════════════════════════ */
+        @media (max-width: 960px) {
+            .top-section {
+                grid-template-columns: 1fr;
+                padding-right: 24px;
+            }
+
+            .about-ribbon {
+                padding: 14px 36px 14px 28px;
+            }
+
+            .bio-content {
+                padding-left: 28px;
+            }
+
+            .portrait-area {
+                order: -1;
+                padding-left: 28px;
+            }
+
+            .violet-panel-wrap {
+                padding-right: 20px;
+            }
+
+            .violet-panel {
+                grid-template-columns: 1fr;
+                padding: 40px 28px;
+                border-radius: 0 48px 48px 0;
+                gap: 36px;
+            }
+
+            .extra-section {
+                padding: 0 28px;
+            }
+
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 540px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .portrait-orbit {
+                width: 250px;
+                height: 330px;
+            }
+
+            .portrait-capsule {
+                width: 235px;
+                height: 315px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Subtle Decorative Background Waves -->
+    <svg class="bg-wave-top" viewBox="0 0 400 400" fill="none">
+        <path d="M50 350 C 120 220, 260 280, 380 80" stroke="#7c5ce0" stroke-width="1.2" />
+        <path d="M80 380 C 150 240, 290 300, 410 100" stroke="#38bdf8" stroke-width="1" />
+        <path d="M110 410 C 180 260, 320 320, 440 120" stroke="#7c5ce0" stroke-width="0.8" />
+    </svg>
+
+    <svg class="bg-wave-bottom" viewBox="0 0 400 400" fill="none">
+        <path d="M20 320 C 140 180, 240 310, 390 140" stroke="#7c5ce0" stroke-width="1.2" />
+        <path d="M50 350 C 170 210, 270 340, 420 170" stroke="#a78bfa" stroke-width="1" />
+    </svg>
+
+    <main class="page-wrapper">
+
+        <!-- ═══════════════════ TOP SECTION: ABOUT ME & PORTRAIT ═══════════════════ -->
+        <section class="top-section">
+            <div>
+                <div class="about-ribbon">
+                    <h1>About me</h1>
+                </div>
+
+                <div class="bio-content">
+                    <p class="bio-greeting">Halo!</p>
+                    <p class="bio-text">
+                        Nama saya <strong>Daffa Azriel</strong>.<br>
+                        Saya adalah lulusan baru (<em>Fresh Graduate</em>) bidang <strong>Manajemen &amp;
+                            Komunikasi</strong> berbasis di Jakarta dengan pengalaman kepemimpinan organisasi kampus,
+                        hubungan masyarakat (PR), dan pengelolaan proyek strategis.
+                    </p>
+                    <p class="bio-text">
+                        <strong>Tujuan karier saya:</strong> Mengembangkan potensi diri di lingkungan profesional yang
+                        dinamis, memadukan ketajaman analisis manajerial dengan komunikasi publik yang persuasif untuk
+                        memberikan kontribusi nyata bagi pertumbuhan perusahaan.
+                    </p>
+
+                    <h2 class="contact-heading">Contact</h2>
+                    <div class="contact-grid">
+                        <a href="mailto:daffa.azriel@gmail.com" class="contact-item">
+                            <span class="contact-badge">G</span>
+                            <span>daffa.azriel@gmail.com</span>
+                        </a>
+                        <a href="tel:+6281288904412" class="contact-item">
+                            <span class="contact-badge">☎</span>
+                            <span>+62 812 8890 4412</span>
+                        </a>
+                        <a href="#" class="contact-item">
+                            <span class="contact-badge">in</span>
+                            <span>linkedin.com/in/daffa-azriel</span>
+                        </a>
+                        <a href="#" class="contact-item">
+                            <span class="contact-badge">M</span>
+                            <span>medium.com/@daffaazriel</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Column: Cyan Capsule Portrait -->
+            <div class="portrait-area">
+                <div class="portrait-orbit">
+                    <div class="portrait-capsule">
+                        <img src="daffa.jpg" alt="Daffa Azriel — Manajemen & Komunikasi">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════ MAIN VIOLET PANEL (EDUCATION & SKILLS) ═══════════════════ -->
+        <section class="violet-panel-wrap">
+            <div class="violet-panel">
+
+                <!-- Left Column inside Violet Card -->
+                <div>
+                    <div class="panel-block">
+                        <div class="panel-heading-row">
+                            <h2 class="panel-title">Education</h2>
+                            <span class="year-pill">2022 - 2026</span>
+                        </div>
+                        <p class="panel-subtext">S1 Manajemen &amp; Komunikasi — IPK 3.86 (Cum Laude)</p>
+                    </div>
+
+                    <div class="panel-block">
+                        <h2 class="panel-title">Technical skill</h2>
+                        <div class="tech-badges">
+                            <div class="tech-badge badge-pr" title="Public Relations & Media">PR<span>Comms</span></div>
+                            <div class="tech-badge badge-mc" title="Media & Campaign Analytics">MC<span>Media</span>
+                            </div>
+                            <div class="tech-badge badge-ex" title="Microsoft Excel & Data">Ex<span>Excel</span></div>
+                            <div class="tech-badge badge-no" title="Notion Project Management">No<span>Notion</span>
+                            </div>
+                            <div class="tech-badge badge-ga" title="Google Analytics">Ga<span>Insight</span></div>
+                            <div class="tech-badge badge-cv" title="Canva & Deck Design">Cv<span>Deck</span></div>
+                        </div>
+                    </div>
+
+                    <div class="panel-block">
+                        <h2 class="panel-title">Interest</h2>
+                        <div class="inline-pipe-row">
+                            <span>Corporate Strategy</span>
+                            <span class="pipe-sep">|</span>
+                            <span>Public Relations</span>
+                            <span class="pipe-sep">|</span>
+                            <span>Media &amp; Branding</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column inside Violet Card -->
+                <div>
+                    <div class="panel-block">
+                        <h2 class="panel-title">Soft skill</h2>
+                        <div class="split-skill-grid">
+                            <div class="skill-col-left">
+                                <div class="skill-list-item">Team Leadership</div>
+                                <div class="skill-list-item">Public Speaking</div>
+                            </div>
+                            <div class="skill-col-right">
+                                <div class="skill-list-item">Critical Thinking</div>
+                                <div class="skill-list-item">Time &amp; Crisis Management</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-block">
+                        <h2 class="panel-title">Skill set</h2>
+                        <div class="split-skill-grid">
+                            <div class="skill-col-left">
+                                <div class="skill-list-item">Strategic Planning</div>
+                                <div class="skill-list-item">Press Release &amp; Copywriting</div>
+                                <div class="skill-list-item">Stakeholder Negotiation</div>
+                            </div>
+                            <div class="skill-col-right">
+                                <div class="skill-list-item">Event &amp; Project Management</div>
+                                <div class="skill-list-item">Brand Campaign Strategy</div>
+                                <div class="skill-list-item">Market &amp; Audience Research</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="panel-block">
+                        <h2 class="panel-title">Language</h2>
+                        <div class="inline-pipe-row">
+                            <span>Bahasa Indonesia (Native)</span>
+                            <span class="pipe-sep">|</span>
+                            <span>English (Professional Working)</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ═══════════════════ SELECTED EXPERIENCE & ACHIEVEMENTS ═══════════════════ -->
+        <section class="extra-section">
+            <div class="extra-header">
+                <h2>Highlights &amp; Experience</h2>
+                <div class="extra-line"></div>
+            </div>
+            <div class="cards-grid">
+                <div class="work-card">
+                    <span class="work-tag">Internship · 2026</span>
+                    <h3>Corporate Comms &amp; PR Intern</h3>
+                    <p>Menyusun 18+ siaran pers korporat, mengelola media monitoring harian, serta mengoordinasikan
+                        publikasi program CSR perusahaan.</p>
+                </div>
+                <div class="work-card">
+                    <span class="work-tag">Leadership · 2025</span>
+                    <h3>Project Officer — Business Summit</h3>
+                    <p>Memimpin 45 panitia lintas divisi, mengamankan pendanaan sponsor Rp 85 juta, dan menghadirkan
+                        600+
+                        peserta tingkat nasional.</p>
+                </div>
+                <div class="work-card">
+                    <span class="work-tag">Achievement · 2024</span>
+                    <h3>1st Runner Up Business Case</h3>
+                    <p>Merancang strategi ekspansi kemitraan B2B dan efisiensi rantai pasok untuk UMKM lokal dengan
+                        proyeksi peningkatan margin 32%.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</body>
+
+</html>
