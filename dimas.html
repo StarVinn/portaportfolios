@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimas Saputra — Digital Marketer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased selection:bg-blue-600 selection:text-white">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="flex items-center gap-2.5">
+                <div class="w-8 h-8 rounded-lg bg-blue-900 text-white font-bold text-sm flex items-center justify-center">DS</div>
+                <span class="font-bold text-slate-900 tracking-tight">Dimas Saputra</span>
+            </div>
+            <nav class="hidden md:flex items-center gap-7 text-xs font-semibold text-slate-600">
+                <a href="#pengalaman" class="hover:text-blue-700 transition-colors">Pengalaman Magang</a>
+                <a href="#kampanye" class="hover:text-blue-700 transition-colors">Studi Kampanye</a>
+                <a href="#sertifikasi" class="hover:text-blue-700 transition-colors">Sertifikasi</a>
+            </nav>
+            <button onclick="window.print()" class="bg-blue-900 hover:bg-blue-800 text-white text-xs font-semibold px-4 py-2.5 rounded-lg transition-all flex items-center gap-2 shadow-sm cursor-pointer">
+                <i data-lucide="download" class="w-3.5 h-3.5"></i>
+                <span>Unduh CV PDF</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- Corporate Modern Hero -->
+    <section class="pt-16 pb-16 px-6 max-w-5xl mx-auto">
+        <div class="bg-white border border-slate-200 rounded-3xl p-8 sm:p-12 shadow-sm">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                <div class="lg:col-span-8 space-y-4">
+                    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 text-blue-800 text-xs font-semibold border border-blue-200">
+                        <span class="w-2 h-2 rounded-full bg-blue-600"></span>
+                        <span>Fresh Graduate • Digital Marketing & Growth</span>
+                    </div>
+                    <h1 class="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+                        Dimas Saputra, S.M.
+                    </h1>
+                    <p class="text-slate-600 text-sm sm:text-base leading-relaxed">
+                        Lulusan Manajemen Pemasaran dengan pengalaman magang dalam pengelolaan kampanye iklan digital berbayar (Meta & Google Ads), optimasi SEO konten, serta analisis konversi berbasis data untuk pertumbuhan merek.
+                    </p>
+                    <div class="flex flex-wrap items-center gap-3 pt-2">
+                        <a href="#kampanye" class="bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-semibold px-5 py-3 rounded-xl transition-all">
+                            Lihat Pencapaian Kampanye
+                        </a>
+                        <button onclick="window.print()" class="bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs sm:text-sm font-semibold px-5 py-3 rounded-xl transition-all flex items-center gap-2 cursor-pointer">
+                            <i data-lucide="file-text" class="w-4 h-4 text-blue-700"></i>
+                            <span>Simpan CV (PDF)</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Highlight Metrics Box -->
+                <div class="lg:col-span-4 grid grid-cols-2 lg:grid-cols-1 gap-3">
+                    <div class="p-4 rounded-2xl bg-blue-950 text-white">
+                        <p class="text-2xl font-extrabold text-blue-300">+165%</p>
+                        <p class="text-xs text-slate-300 mt-0.5">Pertumbuhan Organic Reach selama magang</p>
+                    </div>
+                    <div class="p-4 rounded-2xl bg-slate-100 border border-slate-200">
+                        <p class="text-2xl font-extrabold text-blue-900">3.4x ROAS</p>
+                        <p class="text-xs text-slate-600 mt-0.5">Rata-rata performa kampanye Meta Ads</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pengalaman Magang & Kampanye -->
+    <section id="pengalaman" class="py-12 px-6 max-w-5xl mx-auto">
+        <div class="mb-8">
+            <span class="text-xs font-bold uppercase tracking-wider text-blue-700">Rekam Jejak & Praktik</span>
+            <h2 class="text-2xl font-bold text-slate-900 mt-1">Pengalaman Magang & Kampanye Digital</h2>
+        </div>
+
+        <div id="kampanye" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Campaign 1 -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-3">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold px-2.5 py-1 rounded bg-blue-50 text-blue-800">Digital Marketing Intern</span>
+                    <span class="text-xs text-slate-400">Feb 2026 – Jul 2026</span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">PT Kreasi Nusantara Digital</h3>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Mengelola kalender konten Instagram & TikTok, merancang A/B testing materi iklan Meta Ads dengan anggaran Rp15 juta/bulan, dan menyusun laporan analisis mingguan via Google Analytics 4.
+                </p>
+                <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-blue-800">
+                    <span>CTR Rata-rata: 2,8%</span>
+                    <span>Leads Terkumpul: 420+</span>
+                </div>
+            </div>
+
+            <!-- Campaign 2 -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 shadow-sm space-y-3">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-bold px-2.5 py-1 rounded bg-emerald-50 text-emerald-800">Kampanye Peluncuran</span>
+                    <span class="text-xs text-slate-400">Proyek Akhir 2026</span>
+                </div>
+                <h3 class="text-lg font-bold text-slate-900">Optimasi SEO & Konversi E-Commerce Lokal</h3>
+                <p class="text-xs text-slate-600 leading-relaxed">
+                    Melakukan riset kata kunci intent tinggi, optimasi struktur landing page produk, serta menyusun alur email marketing retargeting untuk meningkatkan penyelesaian checkout.
+                </p>
+                <div class="pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-semibold text-blue-800">
+                    <span>Top 5 SERP: 12 Keyword</span>
+                    <span>Konversi Naik: +24%</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sertifikasi & Keahlian -->
+    <section id="sertifikasi" class="py-12 px-6 max-w-5xl mx-auto">
+        <div class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-8 shadow-sm">
+            <h2 class="text-xl font-bold text-slate-900 mb-6">Sertifikasi Kompetensi & Keahlian</h2>
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
+                    <i data-lucide="award" class="w-5 h-5 text-blue-700 shrink-0 mt-0.5"></i>
+                    <div>
+                        <h3 class="text-sm font-bold text-slate-900">Google Digital Garage</h3>
+                        <p class="text-xs text-slate-500 mt-0.5">Fundamentals of Digital Marketing</p>
+                    </div>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
+                    <i data-lucide="award" class="w-5 h-5 text-blue-700 shrink-0 mt-0.5"></i>
+                    <div>
+                        <h3 class="text-sm font-bold text-slate-900">Meta Certified</h3>
+                        <p class="text-xs text-slate-500 mt-0.5">Digital Marketing Associate</p>
+                    </div>
+                </div>
+                <div class="p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex items-start gap-3">
+                    <i data-lucide="award" class="w-5 h-5 text-blue-700 shrink-0 mt-0.5"></i>
+                    <div>
+                        <h3 class="text-sm font-bold text-slate-900">BNSP Kompetensi</h3>
+                        <p class="text-xs text-slate-500 mt-0.5">Skema Pemasaran Digital</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 px-6 border-t border-slate-200 text-center text-xs text-slate-500">
+        <p class="font-semibold text-slate-800">Dimas Saputra — Depok, Jawa Barat</p>
+        <p class="mt-1">Email: dimas.saputra@example.com • LinkedIn: linkedin.com/in/dimassaputra</p>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>

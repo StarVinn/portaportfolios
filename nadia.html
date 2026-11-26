@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nadia Larasati — Product Designer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['Newsreader', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#FAF8F5] text-[#1C1917] font-sans antialiased selection:bg-amber-200 selection:text-stone-900">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-[#FAF8F5]/90 backdrop-blur-md border-b border-stone-200/80">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="font-serif text-xl font-semibold tracking-tight text-stone-900">
+                Nadia Larasati<span class="text-amber-600">.</span>
+            </a>
+            <nav class="hidden sm:flex items-center gap-8 text-xs font-medium uppercase tracking-widest text-stone-500">
+                <a href="#studies" class="hover:text-stone-900 transition-colors">Studi Kasus</a>
+                <a href="#process" class="hover:text-stone-900 transition-colors">Riset UX</a>
+                <a href="#contact" class="text-stone-900 border-b border-stone-900 pb-0.5">Kontak</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Editorial Hero -->
+    <section class="pt-20 pb-20 px-6 max-w-5xl mx-auto">
+        <div class="max-w-3xl space-y-6">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100/80 text-amber-900 text-xs font-medium">
+                <span>UI/UX & Product Designer</span>
+            </div>
+            <h1 class="font-serif text-4xl sm:text-6xl leading-[1.12] tracking-tight text-stone-900">
+                Merancang produk digital yang <span class="italic text-amber-700">intuitif, manusiawi,</span> dan berorientasi pada solusi nyata.
+            </h1>
+            <p class="text-stone-600 text-base sm:text-lg leading-relaxed max-w-2xl">
+                Halo, saya Nadia. Saya menjembatani kebutuhan pengguna dan tujuan bisnis melalui riset mendalam, arsitektur informasi yang jernih, serta sistem desain interaktif di Figma.
+            </p>
+            <div class="flex flex-wrap items-center gap-4 pt-2">
+                <a href="#studies" class="bg-stone-900 hover:bg-stone-800 text-stone-50 text-sm font-medium px-6 py-3 rounded-full transition-all flex items-center gap-2">
+                    <span>Baca Studi Kasus</span>
+                    <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+                </a>
+                <a href="#process" class="bg-white hover:bg-stone-100 border border-stone-300 text-stone-800 text-sm font-medium px-6 py-3 rounded-full transition-all">
+                    Alur Riset Desain
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Case Studies -->
+    <section id="studies" class="py-16 px-6 max-w-5xl mx-auto border-t border-stone-200">
+        <div class="flex items-end justify-between mb-12">
+            <div>
+                <span class="text-xs uppercase tracking-widest text-amber-700 font-semibold">Selected Works</span>
+                <h2 class="font-serif text-3xl text-stone-900 mt-1">Galeri Studi Kasus UX</h2>
+            </div>
+            <span class="text-xs text-stone-500 hidden sm:inline">2025 — 2026</span>
+        </div>
+
+        <div class="space-y-14">
+            <!-- Case Study 1 -->
+            <article class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-white p-6 sm:p-8 rounded-3xl border border-stone-200/80 shadow-sm hover:shadow-md transition-shadow">
+                <div class="md:col-span-6 overflow-hidden rounded-2xl bg-stone-100 aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=800&q=80" alt="SehatKu Mobile App Redesign" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="md:col-span-6 space-y-4">
+                    <div class="flex items-center gap-2 text-xs font-medium text-amber-700">
+                        <span>Mobile Health App</span>
+                        <span>•</span>
+                        <span>UX Research & Prototyping</span>
+                    </div>
+                    <h3 class="font-serif text-2xl sm:text-3xl text-stone-900">Redesain Alur Janji Temu Klinik pada Aplikasi SehatKu</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        Menyederhanakan 7 langkah pendaftaran pasien menjadi 3 langkah ringkas berdasarkan usability testing terhadap 18 responden, menurunkan tingkat drop-off sebesar 42%.
+                    </p>
+                    <div class="pt-2 flex flex-wrap items-center gap-3">
+                        <span class="px-3 py-1 rounded-full bg-stone-100 text-stone-700 text-xs">Figma Prototype</span>
+                        <span class="px-3 py-1 rounded-full bg-stone-100 text-stone-700 text-xs">Design System</span>
+                        <span class="px-3 py-1 rounded-full bg-stone-100 text-stone-700 text-xs">Usability Testing</span>
+                    </div>
+                </div>
+            </article>
+
+            <!-- Case Study 2 -->
+            <article class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center bg-white p-6 sm:p-8 rounded-3xl border border-stone-200/80 shadow-sm hover:shadow-md transition-shadow">
+                <div class="md:col-span-6 md:order-2 overflow-hidden rounded-2xl bg-stone-100 aspect-[4/3]">
+                    <img src="https://images.unsplash.com/photo-1561070791-2526d30994b5?auto=format&fit=crop&w=800&q=80" alt="Kala Workspace Web Design" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700">
+                </div>
+                <div class="md:col-span-6 md:order-1 space-y-4">
+                    <div class="flex items-center gap-2 text-xs font-medium text-amber-700">
+                        <span>SaaS Productivity</span>
+                        <span>•</span>
+                        <span>UI Design & Interaction</span>
+                    </div>
+                    <h3 class="font-serif text-2xl sm:text-3xl text-stone-900">Kala Workspace — Sistem Manajemen Proyek Tim Kreatif</h3>
+                    <p class="text-stone-600 text-sm leading-relaxed">
+                        Membangun antarmuka kanban dan timeline editorial dengan kontras aksesibilitas WCAG AA serta komponen token warna adaptif untuk mode fokus.
+                    </p>
+                    <div class="pt-2 flex flex-wrap items-center gap-3">
+                        <span class="px-3 py-1 rounded-full bg-stone-100 text-stone-700 text-xs">User Flow</span>
+                        <span class="px-3 py-1 rounded-full bg-stone-100 text-stone-700 text-xs">Wireframing</span>
+                        <span class="px-3 py-1 rounded-full bg-stone-100 text-stone-700 text-xs">Interactive UI</span>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- UX Process -->
+    <section id="process" class="py-16 px-6 max-w-5xl mx-auto border-t border-stone-200">
+        <div class="mb-10">
+            <span class="text-xs uppercase tracking-widest text-amber-700 font-semibold">Methodology</span>
+            <h2 class="font-serif text-3xl text-stone-900 mt-1">Alur Riset & Eksekusi Desain</h2>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="p-6 rounded-2xl bg-white border border-stone-200/80 space-y-2">
+                <span class="font-serif italic text-2xl text-amber-700">01.</span>
+                <h3 class="font-semibold text-base text-stone-900">Empathize & Audit</h3>
+                <p class="text-xs text-stone-600 leading-relaxed">Wawancara pengguna, analisis kompetitor, dan pemetaan pain points utama.</p>
+            </div>
+            <div class="p-6 rounded-2xl bg-white border border-stone-200/80 space-y-2">
+                <span class="font-serif italic text-2xl text-amber-700">02.</span>
+                <h3 class="font-semibold text-base text-stone-900">Define & Wireframe</h3>
+                <p class="text-xs text-stone-600 leading-relaxed">Menyusun arsitektur informasi, user flow, dan sketsa struktur low-fidelity.</p>
+            </div>
+            <div class="p-6 rounded-2xl bg-white border border-stone-200/80 space-y-2">
+                <span class="font-serif italic text-2xl text-amber-700">03.</span>
+                <h3 class="font-semibold text-base text-stone-900">Prototype & System</h3>
+                <p class="text-xs text-stone-600 leading-relaxed">Merancang visual high-fidelity, komponen reusable, dan interaksi di Figma.</p>
+            </div>
+            <div class="p-6 rounded-2xl bg-white border border-stone-200/80 space-y-2">
+                <span class="font-serif italic text-2xl text-amber-700">04.</span>
+                <h3 class="font-semibold text-base text-stone-900">Test & Iterate</h3>
+                <p class="text-xs text-stone-600 leading-relaxed">Validasi prototipe langsung ke pengguna dan penyempurnaan sebelum handoff.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-16 px-6 border-t border-stone-200 text-center">
+        <div class="max-w-xl mx-auto space-y-4">
+            <h2 class="font-serif text-3xl text-stone-900">Tertarik Berkolaborasi?</h2>
+            <p class="text-sm text-stone-600">Terbuka untuk kesempatan Product Designer, UI/UX Designer, maupun proyek desain produk digital.</p>
+            <div class="pt-3 flex justify-center gap-4">
+                <a href="mailto:nadia.larasati@example.com" class="bg-stone-900 hover:bg-amber-700 text-white text-xs font-medium px-6 py-3 rounded-full transition-colors">
+                    nadia.larasati@example.com
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>

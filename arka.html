@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arka Pratama — Software Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-[#090D16] text-slate-200 font-sans antialiased selection:bg-emerald-500 selection:text-slate-950">
+
+    <!-- Navbar -->
+    <header class="fixed top-0 w-full z-50 bg-[#090D16]/85 backdrop-blur-md border-b border-slate-800/80">
+        <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="font-mono text-sm font-bold text-emerald-400 flex items-center gap-2">
+                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                arka@dev:~$
+            </a>
+            <nav class="hidden sm:flex items-center gap-7 text-xs font-mono text-slate-400">
+                <a href="#projects" class="hover:text-emerald-400 transition-colors">01. Projects</a>
+                <a href="#architecture" class="hover:text-emerald-400 transition-colors">02. Stack</a>
+                <a href="#notes" class="hover:text-emerald-400 transition-colors">03. Tech Notes</a>
+                <a href="#contact" class="px-3.5 py-1.5 rounded border border-emerald-500/40 text-emerald-400 hover:bg-emerald-500/10 transition-colors">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Terminal -->
+    <section class="pt-32 pb-20 px-6 max-w-5xl mx-auto">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-7 space-y-5">
+                <p class="font-mono text-xs text-emerald-400 tracking-wider uppercase">// Full-Stack & Backend Systems</p>
+                <h1 class="text-4xl sm:text-5xl font-bold text-white tracking-tight leading-tight">
+                    Arka Pratama. <br>
+                    <span class="text-slate-400">Membangun sistem web yang cepat & terukur.</span>
+                </h1>
+                <p class="text-slate-400 text-sm sm:text-base leading-relaxed max-w-xl">
+                    Software Engineer yang berfokus pada pengembangan arsitektur API, aplikasi web modern berbasis React & TypeScript, serta otomasi pipeline cloud yang efisien.
+                </p>
+                <div class="flex flex-wrap items-center gap-4 pt-2">
+                    <a href="#projects" class="bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold text-sm px-5 py-2.5 rounded-lg transition-all flex items-center gap-2">
+                        <i data-lucide="folder-git-2" class="w-4 h-4"></i>
+                        <span>Eksplorasi Repositori</span>
+                    </a>
+                    <a href="https://github.com" target="_blank" class="bg-slate-900 hover:bg-slate-800 border border-slate-700 text-slate-200 font-mono text-xs px-4 py-3 rounded-lg transition-all flex items-center gap-2">
+                        <i data-lucide="github" class="w-4 h-4 text-emerald-400"></i>
+                        <span>github.com/arkapratama</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Code Window Card -->
+            <div class="lg:col-span-5">
+                <div class="rounded-xl bg-[#0F1623] border border-slate-800 shadow-2xl overflow-hidden font-mono text-xs">
+                    <div class="flex items-center justify-between px-4 py-2.5 bg-slate-900/90 border-b border-slate-800">
+                        <div class="flex gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full bg-rose-500/80"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-amber-500/80"></span>
+                            <span class="w-2.5 h-2.5 rounded-full bg-emerald-500/80"></span>
+                        </div>
+                        <span class="text-slate-500 text-[11px]">profile.config.ts</span>
+                    </div>
+                    <div class="p-5 space-y-2 text-slate-300 leading-relaxed">
+                        <p><span class="text-cyan-400">const</span> <span class="text-emerald-400">engineer</span> = {</p>
+                        <p class="pl-4">name: <span class="text-amber-300">'Arka Pratama'</span>,</p>
+                        <p class="pl-4">role: <span class="text-amber-300">'Software Engineer'</span>,</p>
+                        <p class="pl-4">location: <span class="text-amber-300">'Depok, Indonesia'</span>,</p>
+                        <p class="pl-4">stack: [<span class="text-amber-300">'React'</span>, <span class="text-amber-300">'Node.js'</span>, <span class="text-amber-300">'PostgreSQL'</span>, <span class="text-amber-300">'Docker'</span>],</p>
+                        <p class="pl-4">openToWork: <span class="text-cyan-400">true</span></p>
+                        <p>};</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- GitHub Projects & System Architecture -->
+    <section id="projects" class="py-16 px-6 max-w-5xl mx-auto border-t border-slate-800/80">
+        <div class="flex items-center justify-between mb-10">
+            <div>
+                <span class="font-mono text-xs text-emerald-400">01. SELECTED REPOSITORIES</span>
+                <h2 class="text-2xl font-bold text-white mt-1">Arsitektur & Proyek Pilihan</h2>
+            </div>
+            <span class="font-mono text-xs text-slate-500 hidden sm:inline">Synced via GitHub API</span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <!-- Repo 1 -->
+            <div class="group bg-[#0F1623] border border-slate-800 hover:border-emerald-500/50 rounded-xl p-6 transition-all">
+                <div class="flex items-center justify-between text-slate-400 mb-4">
+                    <i data-lucide="server" class="w-5 h-5 text-emerald-400"></i>
+                    <div class="flex items-center gap-3 font-mono text-xs">
+                        <span class="flex items-center gap-1"><i data-lucide="star" class="w-3.5 h-3.5 text-amber-400"></i> 148</span>
+                        <span class="flex items-center gap-1"><i data-lucide="git-fork" class="w-3.5 h-3.5"></i> 32</span>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">NexusQueue — Distributed Task Broker</h3>
+                <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                    Sistem antrean tugas terdistribusi berlatensi rendah menggunakan Go dan Redis Streams dengan fitur auto-retry serta dashboard monitoring real-time.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-5 font-mono text-[11px] text-cyan-400">
+                    <span class="px-2.5 py-0.5 rounded bg-cyan-950/60 border border-cyan-800/50">Golang</span>
+                    <span class="px-2.5 py-0.5 rounded bg-cyan-950/60 border border-cyan-800/50">Redis</span>
+                    <span class="px-2.5 py-0.5 rounded bg-cyan-950/60 border border-cyan-800/50">Docker</span>
+                </div>
+            </div>
+
+            <!-- Repo 2 -->
+            <div class="group bg-[#0F1623] border border-slate-800 hover:border-emerald-500/50 rounded-xl p-6 transition-all">
+                <div class="flex items-center justify-between text-slate-400 mb-4">
+                    <i data-lucide="layers" class="w-5 h-5 text-emerald-400"></i>
+                    <div class="flex items-center gap-3 font-mono text-xs">
+                        <span class="flex items-center gap-1"><i data-lucide="star" class="w-3.5 h-3.5 text-amber-400"></i> 96</span>
+                        <span class="flex items-center gap-1"><i data-lucide="git-fork" class="w-3.5 h-3.5"></i> 19</span>
+                    </div>
+                </div>
+                <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">FinTrack API — Multi-Tenant Ledger</h3>
+                <p class="text-slate-400 text-xs mt-2 leading-relaxed">
+                    REST & GraphQL API untuk pencatatan transaksi keuangan skala UMKM dengan isolasi database multi-tenant, autentikasi JWT, dan audit log otomatis.
+                </p>
+                <div class="flex flex-wrap gap-2 mt-5 font-mono text-[11px] text-cyan-400">
+                    <span class="px-2.5 py-0.5 rounded bg-cyan-950/60 border border-cyan-800/50">TypeScript</span>
+                    <span class="px-2.5 py-0.5 rounded bg-cyan-950/60 border border-cyan-800/50">Node.js</span>
+                    <span class="px-2.5 py-0.5 rounded bg-cyan-950/60 border border-cyan-800/50">PostgreSQL</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack & Engineering Notes -->
+    <section id="notes" class="py-16 px-6 max-w-5xl mx-auto border-t border-slate-800/80 grid grid-cols-1 md:grid-cols-12 gap-10">
+        <div id="architecture" class="md:col-span-5 space-y-4">
+            <span class="font-mono text-xs text-emerald-400">02. CORE TECHNOLOGIES</span>
+            <h2 class="text-xl font-bold text-white">Tech Stack Utama</h2>
+            <div class="grid grid-cols-2 gap-2.5 font-mono text-xs text-slate-300 pt-2">
+                <div class="p-2.5 rounded bg-slate-900/90 border border-slate-800">▸ React / Next.js</div>
+                <div class="p-2.5 rounded bg-slate-900/90 border border-slate-800">▸ Tailwind CSS</div>
+                <div class="p-2.5 rounded bg-slate-900/90 border border-slate-800">▸ Node.js / Express</div>
+                <div class="p-2.5 rounded bg-slate-900/90 border border-slate-800">▸ Laravel / PHP</div>
+                <div class="p-2.5 rounded bg-slate-900/90 border border-slate-800">▸ PostgreSQL / MySQL</div>
+                <div class="p-2.5 rounded bg-slate-900/90 border border-slate-800">▸ Linux / Docker</div>
+            </div>
+        </div>
+
+        <div class="md:col-span-7 space-y-4">
+            <span class="font-mono text-xs text-emerald-400">03. TECHNICAL NOTES</span>
+            <h2 class="text-xl font-bold text-white">Catatan Teknis Terbaru</h2>
+            <div class="space-y-3 pt-1">
+                <article class="p-4 rounded-xl bg-[#0F1623] border border-slate-800 hover:border-slate-700 transition-colors">
+                    <span class="font-mono text-[11px] text-slate-500">12 Nov 2026 • 5 min read</span>
+                    <h3 class="text-sm font-semibold text-white mt-1">Optimasi Query Indexing PostgreSQL untuk Beban 1 Juta Baris</h3>
+                    <p class="text-xs text-slate-400 mt-1">Memangkas waktu respons endpoint laporan dari 820ms menjadi 34ms menggunakan composite index.</p>
+                </article>
+                <article class="p-4 rounded-xl bg-[#0F1623] border border-slate-800 hover:border-slate-700 transition-colors">
+                    <span class="font-mono text-[11px] text-slate-500">28 Okt 2026 • 4 min read</span>
+                    <h3 class="text-sm font-semibold text-white mt-1">Penerapan Rate Limiting & Caching Layer dengan Redis</h3>
+                    <p class="text-xs text-slate-400 mt-1">Melindungi API publik dari lonjakan trafik menggunakan algoritma sliding window.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Contact -->
+    <footer id="contact" class="py-12 px-6 border-t border-slate-800/80 text-center">
+        <div class="max-w-xl mx-auto space-y-4">
+            <p class="font-mono text-xs text-emerald-400">04. WHAT'S NEXT?</p>
+            <h2 class="text-2xl font-bold text-white">Mari Diskusi Proyek atau Peluang Kerja</h2>
+            <p class="text-xs text-slate-400">Tersedia untuk posisi Full-Time Software Engineer maupun kolaborasi pengembangan sistem web.</p>
+            <div class="pt-2">
+                <a href="mailto:arka.pratama@example.com" class="inline-flex items-center gap-2 font-mono text-xs bg-emerald-500/10 text-emerald-400 border border-emerald-500/40 hover:bg-emerald-500 hover:text-slate-950 px-5 py-2.5 rounded-lg transition-all">
+                    <i data-lucide="terminal" class="w-4 h-4"></i>
+                    <span>arka.pratama@example.com</span>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <script>lucide.createIcons();</script>
+</body>
+</html>
